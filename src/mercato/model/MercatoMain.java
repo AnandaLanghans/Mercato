@@ -3,7 +3,6 @@ package mercato.model;
 public class MercatoMain {
 
 	public static void main(String[] args) {
-		System.out.println("commit modificato");
 		// avvio del distributtore di numeri
 		Distributoredinumeri distributore= new Distributoredinumeri();
 		
@@ -18,7 +17,6 @@ public class MercatoMain {
 			Thread t1= new Thread(c);
 			t1.start();
 		}
-		
 	}
-	
+
 }
