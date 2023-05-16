@@ -2,6 +2,7 @@ package mercato.model;
 
 public class Cliente implements Runnable {
 	Distributoredinumeri distributore;
+	
 	public Cliente(Distributoredinumeri distributore) {
 		this.distributore=distributore;
 	}

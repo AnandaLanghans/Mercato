@@ -10,6 +10,7 @@ public class Venditore implements Runnable {
 	public void run() {
 		while(true) {
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Attende il cliente ");
+
 			int cliente = distributore.ciSonoClienti();
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
 			try {
@@ -20,5 +21,7 @@ public class Venditore implements Runnable {
 		}
 		
 	}
+	
+	
 
 }
