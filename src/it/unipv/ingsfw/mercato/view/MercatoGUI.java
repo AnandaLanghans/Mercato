@@ -1,4 +1,4 @@
-package mercato.view;
+package it.unipv.ingsfw.mercato.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
