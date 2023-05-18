@@ -1,6 +1,6 @@
-package mercato.model;
+package it.unipv.ingsfw.mercato.model;
 
-import mercato.view.MercatoGUI;
+import it.unipv.ingsfw.mercato.view.MercatoGUI;
 
 // nuovo commit prova 
 public class MercatoMain {

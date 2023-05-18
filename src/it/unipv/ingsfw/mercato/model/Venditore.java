@@ -1,4 +1,4 @@
-package mercato.model;
+package it.unipv.ingsfw.mercato.model;
 
 public class Venditore implements Runnable {
 	Distributoredinumeri distributore;
