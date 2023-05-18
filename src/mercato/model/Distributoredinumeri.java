@@ -48,6 +48,4 @@ public class Distributoredinumeri {
 		return numServito;
 	}
 
-	
-	
 }
