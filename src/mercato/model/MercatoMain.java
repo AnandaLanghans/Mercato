@@ -1,4 +1,4 @@
-package it.unipv.ingsfw.mercato.model;
+package mercato.model;
 // nuovo commit prova 
 public class MercatoMain {
 
