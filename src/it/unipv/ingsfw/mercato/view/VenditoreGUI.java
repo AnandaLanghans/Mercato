@@ -1,6 +1,7 @@
 package it.unipv.ingsfw.mercato.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -16,21 +17,30 @@ public class VenditoreGUI extends JPanel {
 		
 		setLayout (new GridBagLayout());
 		GridBagConstraints c=new GridBagConstraints();
-		setBackground(new Color (0,0,0,0));
+		setBackground(Color.white);
 		
 	
-		ImageIcon Icon=new ImageIcon("Risorse/Immagini/logo4.png");
+		ImageIcon Icon=new ImageIcon("Risorse/Immagini/bancarella.png");
 		Image image = Icon.getImage();
-		Image newimg = image.getScaledInstance(170, 170, java.awt.Image.SCALE_SMOOTH);  
+		Image newimg = image.getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH);  
 		Icon = new ImageIcon(newimg);
 		
 		
 		c.anchor = GridBagConstraints.FIRST_LINE_START;
 		JLabel l= new JLabel(Icon);
+		c.gridx=0;
+		c.gridy=1;
+		c.insets= new Insets (0,0,170,500);
+		add(l,c);
 		
+		c.anchor = GridBagConstraints.FIRST_LINE_START;
+		JLabel cont= new JLabel("14");
+		cont.setFont(new Font("Comic Sans MS", Font.BOLD,15));
+		cont.setForeground(new Color(0,0,0));
 		c.gridx=0;
 		c.gridy=0;
-		add(l,c);
+		c.insets= new Insets (0,0,500,500);
+		add(cont,c);
 	}
 
 }

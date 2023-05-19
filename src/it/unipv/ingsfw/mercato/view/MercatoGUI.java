@@ -35,10 +35,14 @@ public class MercatoGUI extends JFrame{
 		
 		
 		VenditoreGUI panel=new VenditoreGUI();
+		ClienteGUI cl=new ClienteGUI();
 		
-		panel.setBounds(0, 0, 200, 200);
+		panel.setBounds(0, 0, 900,900);
+		cl.setBounds(0,0,200,200);
 		pane.add(panel, new Integer(1));
+		pane.add(cl, new Integer(2));
 		add(panel);
+		add(cl);
 		setSize(screenWidth,screenHeight);
 		
 		setExtendedState(JFrame.MAXIMIZED_BOTH);

@@ -47,5 +47,10 @@ public class Distributoredinumeri {
 		notifyAll();
 		return numServito;
 	}
+	
+	public int getNum() {
+		
+		return numServito;
+	}
 
 }
