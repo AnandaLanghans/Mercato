@@ -1,7 +1,9 @@
 package it.unipv.ingsfw.mercato.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 
@@ -28,21 +30,26 @@ public class MercatoGUI extends JFrame{
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
 		
-		setBackground(new Color (255,255,255));
-
+		setLayout (new BorderLayout());
+		
+		setBackground(Color.white);
+		
 		setTitle("Mercato");
 		JLayeredPane pane = this.getLayeredPane();
 		
 		
-		VenditoreGUI panel=new VenditoreGUI();
+		VenditoreGUI vending=new VenditoreGUI();
+		
+		Pannello panel = new Pannello();
 		ClienteGUI cl=new ClienteGUI();
 		
-		panel.setBounds(0, 0, 900,900);
-		cl.setBounds(0,0,200,200);
-		pane.add(panel, new Integer(1));
+	
+		cl.setBounds(0,0,1000,1000);
 		pane.add(cl, new Integer(2));
-		add(panel);
-		add(cl);
+		add(panel,BorderLayout.EAST);
+		
+		add(vending,BorderLayout.WEST);
+		
 		setSize(screenWidth,screenHeight);
 		
 		setExtendedState(JFrame.MAXIMIZED_BOTH);

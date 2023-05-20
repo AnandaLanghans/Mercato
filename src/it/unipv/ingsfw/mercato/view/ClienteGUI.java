@@ -24,13 +24,14 @@ public class ClienteGUI extends JPanel {
 
 		setLayout (new GridBagLayout());
 		GridBagConstraints c=new GridBagConstraints();
-		setBackground(new Color (0,0,0,0));
+		setBackground(new Color(0,0,0,0));
+		//setBackground(Color.red);
 		
 		ImageIcon Icon=new ImageIcon("Risorse/Immagini/omino.png");
 		Image image = Icon.getImage();
-		Image newimg = image.getScaledInstance(170, 250, java.awt.Image.SCALE_SMOOTH);  
+		Image newimg = image.getScaledInstance(150, 230, java.awt.Image.SCALE_SMOOTH);  
 		Icon = new ImageIcon(newimg);
-		Button b = new Button();
+		
 
 
 	//	if(cliente.getN()== db.getNum()) {
@@ -39,9 +40,10 @@ public class ClienteGUI extends JPanel {
 			JLabel l= new JLabel(Icon);
 			c.gridx=1;
 			c.gridy=1;
-			c.insets= new Insets (0,0,0,400);
+			c.insets= new Insets (0,250,200,0);
 			add(l,c);
-			
+			// allora per servire il cliente quest'ultimo deve essere nella posizione (0,0,200.150)
+			//per la coda devono partire da (0,250,200,0), forse è meglio mettere una variabile
 		}
 		
 	/*	else {
