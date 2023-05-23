@@ -16,10 +16,10 @@ import it.unipv.ingsfw.mercato.model.Distributoredinumeri;
 
 public class ClienteGUI extends JPanel {
 
-//	Distributoredinumeri db;
-//	Cliente cliente;
+
 	
-	public ClienteGUI() {
+	
+	public ClienteGUI(Cliente cliente, Distributoredinumeri db) {
 		
 
 		setLayout (new GridBagLayout());
@@ -34,7 +34,7 @@ public class ClienteGUI extends JPanel {
 		
 
 
-	//	if(cliente.getN()== db.getNum()) {
+		if(cliente.getN()== db.getNum()) {
 			
 			c.anchor = GridBagConstraints.FIRST_LINE_START;
 			JLabel l= new JLabel(Icon);
@@ -59,5 +59,7 @@ public class ClienteGUI extends JPanel {
 //	}
 	
 	
-
+	}
+	
+	
 }

@@ -41,11 +41,11 @@ public class MercatoGUI extends JFrame{
 		VenditoreGUI vending=new VenditoreGUI();
 		
 		Pannello panel = new Pannello();
-		ClienteGUI cl=new ClienteGUI();
+	//	ClienteGUI cl=new ClienteGUI();
 		
 	
-		cl.setBounds(0,0,1000,1000);
-		pane.add(cl, new Integer(2));
+	//	cl.setBounds(0,0,1000,1000);
+	//	pane.add(cl, new Integer(2));
 		add(panel,BorderLayout.EAST);
 		
 		add(vending,BorderLayout.WEST);

@@ -1,5 +1,7 @@
 package it.unipv.ingsfw.mercato.model;
 
+import it.unipv.ingsfw.mercato.view.ClienteGUI;
+
 public class Multi {
 
 
@@ -16,12 +18,16 @@ public class Multi {
 			Cliente c= new Cliente(distributore);
 			Thread t1= new Thread(c);
 			t1.start();
+			ClienteGUI gui=new ClienteGUI(c,distributore);
+			
 		}
 			
 			// avvio del venditore
 			Venditore v = new Venditore(distributore);
 			Thread t = new Thread(v);
 			t.start();
+			
+			
 	}
 		
 	
