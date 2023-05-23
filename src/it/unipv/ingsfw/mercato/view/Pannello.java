@@ -7,8 +7,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+import it.unipv.ingsfw.mercato.model.Multi;
+
 
 public class Pannello extends JPanel {
 	
@@ -19,13 +24,11 @@ public class Pannello extends JPanel {
 		
 
 		Dimension screenSize = kit.getScreenSize();
-		int screenHeight = screenSize.height;
-		int screenWidth = screenSize.width;
 		//
 		setLayout (new GridBagLayout());
 		GridBagConstraints c=new GridBagConstraints();
 		setBackground(Color.white);
-		setSize(500,screenHeight);
+	//	setSize(500,screenHeight);
 		
 		c.anchor = GridBagConstraints.FIRST_LINE_START;
 		JLabel label=new JLabel("INIZIA :");
@@ -43,6 +46,15 @@ public class Pannello extends JPanel {
 		start.setBackground(Color.green);
 		start.setOpaque(true);
 		start.setBorderPainted(false);
+		start.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Multi mt= new Multi();
+				mt.start();
+			}
+		});
 		
 		
 		//da mettere l'action listener
