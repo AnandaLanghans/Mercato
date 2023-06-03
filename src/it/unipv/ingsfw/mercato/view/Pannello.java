@@ -17,7 +17,7 @@ import it.unipv.ingsfw.mercato.model.Multi;
 
 public class Pannello extends JPanel {
 	
-	public Pannello (){
+	public Pannello (MercatoGUI gui){
 		
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		
@@ -51,7 +51,7 @@ public class Pannello extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Multi mt= new Multi();
+				Multi mt= new Multi(gui);
 				mt.start();
 			}
 		});

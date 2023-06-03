@@ -1,11 +1,17 @@
 package it.unipv.ingsfw.mercato.model;
 
+import java.awt.Color;
+
+import it.unipv.ingsfw.mercato.view.MercatoGUI;
+
 public class Distributoredinumeri {
 	int numAttesa;
 	int numServito;
-	public Distributoredinumeri() {
+	MercatoGUI gui;
+	public Distributoredinumeri(MercatoGUI gui) {
 		this.numAttesa=0;
 		this.numServito=0;
+		this.gui=gui;
 	}
 	
 	// IL cliente ritira il numerino all'ingresso
@@ -38,6 +44,7 @@ public class Distributoredinumeri {
 		while (numAttesa == numServito) {
 			try {
 				wait();
+				gui.changeLabelVen(Color.red);
 				
 			}catch(InterruptedException e) {
 				e.printStackTrace();
@@ -51,6 +58,11 @@ public class Distributoredinumeri {
 	public int getNum() {
 		
 		return numServito;
+	}
+	
+	public int getAttesa() {
+		
+		return numAttesa;
 	}
 
 }

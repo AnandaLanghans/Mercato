@@ -7,7 +7,9 @@ public class MercatoMain {
 
 	public static void main(String[] args) {
 
+		
 		MercatoGUI frame = new MercatoGUI();
+		
 		
 	}
 

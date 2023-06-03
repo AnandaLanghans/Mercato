@@ -1,31 +1,37 @@
 package it.unipv.ingsfw.mercato.model;
 
-import it.unipv.ingsfw.mercato.view.ClienteGUI;
+import it.unipv.ingsfw.mercato.view.MercatoGUI;
 
 public class Multi {
 
 
-	Venditore ven;
+	MercatoGUI gui;;
 	
-	public Multi() {
+	public Multi(MercatoGUI gui) {
 		
+		this.gui=gui;
 	}
 	
 	public void start() {
 		
-		Distributoredinumeri distributore= new Distributoredinumeri();
+		Distributoredinumeri distributore= new Distributoredinumeri(gui);
+	
 		for(int i=0; i<3; i++) {
-			Cliente c= new Cliente(distributore);
+			
+			Cliente c= new Cliente(distributore,gui);
 			Thread t1= new Thread(c);
 			t1.start();
-			ClienteGUI gui=new ClienteGUI(c,distributore);
+			
+			
 			
 		}
 			
 			// avvio del venditore
-			Venditore v = new Venditore(distributore);
+			Venditore v = new Venditore(distributore,gui);
 			Thread t = new Thread(v);
 			t.start();
+		
+		
 			
 			
 	}
