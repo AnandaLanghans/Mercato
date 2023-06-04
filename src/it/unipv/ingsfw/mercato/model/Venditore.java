@@ -15,13 +15,14 @@ public class Venditore implements Runnable {
 	@Override
 	public void run() {
 		while(true) {
-			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Attende il cliente ");
+			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Aspetta un cliente " );
 			gui.changeLabelVen(Color.green);
+			
 			int cliente = distributore.ciSonoClienti();
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
-			
+			gui.changeLabelVen(Color.red);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 			}catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -1,5 +1,7 @@
 package it.unipv.ingsfw.mercato.model;
 
+import java.awt.Color;
+
 import it.unipv.ingsfw.mercato.view.MercatoGUI;
 
 public class Multi {
@@ -21,6 +23,7 @@ public class Multi {
 			Cliente c= new Cliente(distributore,gui);
 			Thread t1= new Thread(c);
 			t1.start();
+
 			
 			
 			

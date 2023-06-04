@@ -19,6 +19,7 @@ public class Distributoredinumeri {
 		numAttesa++;
 		notifyAll();
 		return numAttesa;
+		
 	}
 	
 	// il cliente attende il suo numero
@@ -39,19 +40,24 @@ public class Distributoredinumeri {
 		numServito= num;
 	}
 	
-	// Il venditore controlla se ci sono pazienti in fila
+	// Il venditore controlla se ci sono clienti in fila
 	public synchronized int ciSonoClienti() {
 		while (numAttesa == numServito) {
 			try {
 				wait();
-				gui.changeLabelVen(Color.red);
-				
+				//gui.changeLabelVen(Color.red);
+					
 			}catch(InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		numServito++;
 		notifyAll();
+		
+		// solo per controllare il programma
+		System.out.println(" il numero in attesa è"+ numAttesa);
+		System.out.println("il numero servito è"+ numServito);
+		
 		return numServito;
 	}
 	

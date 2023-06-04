@@ -33,15 +33,18 @@ public class Cliente implements Runnable  {
 	public int getN() {
 		
 		return mioNumero;
+		
 	}
 
 	@Override
 	public void run() {
-		//int mioNumero= distributore.ritiraNumero();
-		mioNum();
-		System.out.println("Cliente: "+ Thread.currentThread().getId()+ " Ho preso il numero "+ getN());
+		int mioNumero= distributore.ritiraNumero();
+		//mioNum();
+		System.out.println("Cliente: "+ Thread.currentThread().getId()+ " Ho preso il numero "+ mioNumero);
 		gui.changeLabelCliente(Color.red);
+		
 		//ClienteGUI gui=new ClienteGUI(c,distributore);
+	
 	
 		try {
 			distributore.attendiNumero(mioNumero);
@@ -51,7 +54,8 @@ public class Cliente implements Runnable  {
 			if(mioNumero== distributore.numServito ) {
 				System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito!");	
 				gui.changeLabelServito(Color.green);
-				wait(1000);
+				
+				//wait(1000);
 				
 			}
 			else {
