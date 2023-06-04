@@ -23,7 +23,7 @@ public class Multi {
 			Cliente c= new Cliente(distributore,gui);
 			Thread t1= new Thread(c);
 			t1.start();
-
+		
 			
 			
 			
@@ -33,7 +33,7 @@ public class Multi {
 			Venditore v = new Venditore(distributore,gui);
 			Thread t = new Thread(v);
 			t.start();
-		
+			
 		
 			
 			

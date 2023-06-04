@@ -11,22 +11,33 @@ public class Venditore implements Runnable {
 		this.distributore= distributore;
 		this.gui=gui;
 	}
+	
+	
 
 	@Override
 	public void run() {
 		while(true) {
+			
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Aspetta un cliente " );
-			gui.changeLabelVen(Color.green);
+			gui.changeLabelVen(Color.green); //aspetta il cliente
+			try {
+				Thread.sleep(1000);
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			
 			int cliente = distributore.ciSonoClienti();
+			
+						
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
-			gui.changeLabelVen(Color.red);
+			gui.changeLabelVen(Color.red); // serve il cliente
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			}catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+		
 		
 	}
 

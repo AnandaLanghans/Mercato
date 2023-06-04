@@ -40,8 +40,8 @@ public class Cliente implements Runnable  {
 	public void run() {
 		int mioNumero= distributore.ritiraNumero();
 		//mioNum();
-		System.out.println("Cliente: "+ Thread.currentThread().getId()+ " Ho preso il numero "+ mioNumero);
-		gui.changeLabelCliente(Color.red);
+		System.out.println("Cliente: "+ Thread.currentThread().getId()+ " Ho preso il numero  e sono in attesa"+ mioNumero);
+		gui.changeLabelCliente(Color.CYAN);
 		
 		//ClienteGUI gui=new ClienteGUI(c,distributore);
 	
@@ -51,8 +51,8 @@ public class Cliente implements Runnable  {
 		
 			Thread.sleep(1000);
 			
-			if(mioNumero== distributore.numServito ) {
-				System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito!");	
+			if(mioNumero == distributore.numServito ) {
+				System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito il numero!"+ mioNumero);	
 				gui.changeLabelServito(Color.green);
 				
 				//wait(1000);
