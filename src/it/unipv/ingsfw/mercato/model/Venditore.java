@@ -20,6 +20,8 @@ public class Venditore implements Runnable {
 			
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Aspetta un cliente " );
 			gui.changeLabelVen(Color.green); 
+			
+			
 			try {
 				Thread.sleep(1000);
 			}catch (InterruptedException e) {
@@ -27,14 +29,19 @@ public class Venditore implements Runnable {
 			}
 			
 			int cliente = distributore.ciSonoClienti();
-			
-						
+			int cont=distributore.getContatore();
+					
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
 			gui.changeLabelVen(Color.red); 
 			try {
 				Thread.sleep(1000);
 			}catch (InterruptedException e) {
 				e.printStackTrace();
+			}
+			
+			if (cont==0) {
+				
+				gui.changeLabelCliente(Color.white);
 			}
 			
 		}
