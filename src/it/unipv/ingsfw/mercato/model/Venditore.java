@@ -30,6 +30,11 @@ public class Venditore implements Runnable {
 			
 			int cliente = distributore.ciSonoClienti();
 			int cont=distributore.getContatore();
+			
+			if (cont==0) {
+				
+				gui.changeLabelCliente(Color.white);
+			}
 					
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
 			gui.changeLabelVen(Color.red); 
@@ -39,10 +44,6 @@ public class Venditore implements Runnable {
 				e.printStackTrace();
 			}
 			
-			if (cont==0) {
-				
-				gui.changeLabelCliente(Color.white);
-			}
 			
 		}
 		
