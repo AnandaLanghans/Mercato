@@ -21,10 +21,11 @@ public class Distributoredinumeri {
 		return numAttesa;
 		
 	}
+
 	
 	// il cliente attende il suo numero
 	public synchronized void attendiNumero(int num) {
-		while(numServito == num) {
+		while(numServito != num) {
 			try {
 				wait();
 			} catch(InterruptedException e) {
@@ -40,6 +41,7 @@ public class Distributoredinumeri {
 		numServito= num;
 	}
 	
+	
 	// Il venditore controlla se ci sono clienti in fila
 	public synchronized int ciSonoClienti() {
 		while (numAttesa == numServito) {
@@ -54,8 +56,11 @@ public class Distributoredinumeri {
 		numServito++;
 		notifyAll();
 		
+		
+		
 		// solo per controllare il programma
 		System.out.println(" il numero in attesa è"+ numAttesa);
+		
 		System.out.println("il numero servito è"+ numServito);
 		
 		return numServito;

@@ -19,7 +19,7 @@ public class Venditore implements Runnable {
 		while(true) {
 			
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Aspetta un cliente " );
-			gui.changeLabelVen(Color.green); //aspetta il cliente
+			gui.changeLabelVen(Color.green); 
 			try {
 				Thread.sleep(1000);
 			}catch (InterruptedException e) {
@@ -30,12 +30,13 @@ public class Venditore implements Runnable {
 			
 						
 			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
-			gui.changeLabelVen(Color.red); // serve il cliente
+			gui.changeLabelVen(Color.red); 
 			try {
 				Thread.sleep(1000);
 			}catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
 		}
 		
 		

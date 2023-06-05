@@ -18,15 +18,20 @@ public class Cliente implements Runnable  {
 	MercatoGUI gui;
 	
 	int mioNumero;
+
+	
 	public Cliente(Distributoredinumeri distributore, MercatoGUI gui) {
 		this.distributore=distributore;
 		this.gui=gui;
 		
+		
 	}
+	
 	
 	public void mioNum() {
 		
 		mioNumero= distributore.ritiraNumero();
+		
 		
 	}
 	
@@ -35,41 +40,29 @@ public class Cliente implements Runnable  {
 		return mioNumero;
 		
 	}
+	
 
 	@Override
 	public void run() {
 		int mioNumero= distributore.ritiraNumero();
-		//mioNum();
 		System.out.println("Cliente: "+ Thread.currentThread().getId()+ " Ho preso il numero  e sono in attesa"+ mioNumero);
-		gui.changeLabelCliente(Color.CYAN);
-		
-		//ClienteGUI gui=new ClienteGUI(c,distributore);
-	
-	
+		gui.changeLabelCliente(Color.blue);
 		try {
-			distributore.attendiNumero(mioNumero);
-		
 			Thread.sleep(1000);
-			
-			if(mioNumero == distributore.numServito ) {
-				System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito il numero!"+ mioNumero);	
-				gui.changeLabelServito(Color.green);
-				
-				//wait(1000);
-				
-			}
-			else {
-				
-				gui.changeLabelServito(Color.white);
-			}
-			
-			
-		} catch (InterruptedException e) {
-			
+		}catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		distributore.attendiNumero(mioNumero);
+		System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito il numero!"+ mioNumero);
+		gui.changeLabelServito(Color.red);
+		try {
+			Thread.sleep(1000);
+		}catch (InterruptedException e) {
+			e.printStackTrace();
+		
+		}
+		gui.changeLabelServito(Color.green);
 
 	}
-	
-	
+		
 }

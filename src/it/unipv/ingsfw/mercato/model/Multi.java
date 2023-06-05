@@ -5,7 +5,7 @@ import java.awt.Color;
 import it.unipv.ingsfw.mercato.view.MercatoGUI;
 
 public class Multi {
-
+	public int NClienti = 5;
 
 	MercatoGUI gui;;
 	
@@ -18,13 +18,11 @@ public class Multi {
 		
 		Distributoredinumeri distributore= new Distributoredinumeri(gui);
 	
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<NClienti; i++) {
 			
 			Cliente c= new Cliente(distributore,gui);
 			Thread t1= new Thread(c);
 			t1.start();
-		
-			
 			
 			
 		}
