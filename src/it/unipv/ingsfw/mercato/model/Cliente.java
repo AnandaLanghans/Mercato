@@ -53,7 +53,7 @@ public class Cliente implements Runnable  {
 			e.printStackTrace();
 		}
 		distributore.attendiNumero(mioNumero);
-		System.out.println("Il cliente "+ Thread.currentThread().getId()+ ": Viene servito il numero!"+ mioNumero);
+		System.out.println("Cliente: "+ Thread.currentThread().getId()+ ": Viene servito il cliente numero "+ mioNumero);
 		gui.changeLabelServito(Color.red);
 		try {
 			Thread.sleep(1000);
@@ -62,6 +62,11 @@ public class Cliente implements Runnable  {
 		
 		}
 		gui.changeLabelServito(Color.green);
+		int clienti=distributore.getContatore();
+		System.out.println("Clienti: Ci sono " + clienti +" in coda");
+		if(clienti == 0) {
+			gui.changeLabelServito(Color.WHITE);
+		}
 
 	}
 		

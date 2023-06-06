@@ -65,10 +65,6 @@ public class Distributoredinumeri {
 		
 		
 		
-		// solo per controllare il programma
-		System.out.println(" il numero in attesa è"+ numAttesa);
-		
-		System.out.println("il numero servito è"+ numServito);
 		
 		return numServito;
 	}

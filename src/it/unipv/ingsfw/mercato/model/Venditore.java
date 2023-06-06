@@ -36,7 +36,7 @@ public class Venditore implements Runnable {
 				gui.changeLabelCliente(Color.white);
 			}
 					
-			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente "+ cliente);
+			System.out.println("Venditore "+ Thread.currentThread().getId()+ ": Serve il cliente numero "+ cliente);
 			gui.changeLabelVen(Color.red); 
 			try {
 				Thread.sleep(1000);
