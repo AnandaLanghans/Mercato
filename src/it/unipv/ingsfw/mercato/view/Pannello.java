@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import it.unipv.ingsfw.mercato.model.Multi;
+import it.unipv.ingsfw.mercato.model.MultiThread;
 
 
 public class Pannello extends JPanel {
@@ -51,7 +51,7 @@ public class Pannello extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Multi mt= new Multi(gui);
+				MultiThread mt= new MultiThread(gui);
 				mt.start();
 			}
 		});

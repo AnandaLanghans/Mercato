@@ -4,12 +4,12 @@ import java.awt.Color;
 
 import it.unipv.ingsfw.mercato.view.MercatoGUI;
 
-public class Multi {
+public class MultiThread {
 	public int NClienti = 5;
 
 	MercatoGUI gui;;
 	
-	public Multi(MercatoGUI gui) {
+	public MultiThread(MercatoGUI gui) {
 		
 		this.gui=gui;
 	}

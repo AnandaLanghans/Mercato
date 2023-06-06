@@ -38,11 +38,6 @@ public class Distributoredinumeri {
 		}
 	}
 	
-	// Il venditore imposta il numero inizziale
-	public void impostaInizio(int num) {
-		numAttesa= num;
-		numServito= num;
-	}
 	
 	
 	// Il venditore controlla se ci sono clienti in fila
@@ -69,15 +64,6 @@ public class Distributoredinumeri {
 		return numServito;
 	}
 	
-	public int getNum() {
-		
-		return numServito;
-	}
-	
-	public int getAttesa() {
-		
-		return numAttesa;
-	}
 	
 	public synchronized int getContatore() {
 		

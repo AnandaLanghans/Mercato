@@ -27,20 +27,7 @@ public class Cliente implements Runnable  {
 		
 	}
 	
-	
-	public void mioNum() {
-		
-		mioNumero= distributore.ritiraNumero();
-		
-		
-	}
-	
-	public int getN() {
-		
-		return mioNumero;
-		
-	}
-	
+
 
 	@Override
 	public void run() {
